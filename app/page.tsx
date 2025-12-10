@@ -20,7 +20,7 @@ export default function Home() {
           }`}
         >
           <h1 className="font-light tracking-[-0.015em] leading-[1.37] text-[47px] sm:text-[44px] md:text-[52px]">
-            The Regeneration Suite xd
+            The Regeneration Suite
           </h1>
         </div>
       </section>
