@@ -19,8 +19,8 @@ export default function Home() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <h1 className="font-light tracking-[-0.015em] leading-[1.37] text-[47px] sm:text-[44px] md:text-[52px] lg:text-[64px]">
-            The Regeneration Suite
+          <h1 className="font-light tracking-[-0.015em] leading-[1.37] text-[47px] sm:text-[44px] md:text-[52px]">
+            The Regeneration Suite xd
           </h1>
         </div>
       </section>
