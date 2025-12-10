@@ -1,50 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ========================================
+   IMPORTACIÓN DE TAILWIND CSS v4
+   ======================================== */
+/* Importa todos los estilos base, componentes y utilidades de Tailwind */
+@import "tailwindcss";
 
-/* Fuente Sohne */
+/* ========================================
+   CONFIGURACIÓN DE FUENTE PERSONALIZADA
+   ======================================== */
+/* Definición de la fuente Sohne personalizada */
 @font-face {
-  font-family: 'Sohne';
-  src: url('/fonts/Sohne-Buch.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'Sohne';                              /* Nombre de la familia de fuente */
+  src: url('/fonts/Sohne-Buch.ttf') format('truetype'); /* Ruta al archivo de fuente */
+  font-weight: 100 900;                               /* Rango de pesos soportados (variable) */
+  font-style: normal;                                 /* Estilo normal (no cursiva) */
+  font-display: swap;                                 /* Optimización de carga: muestra fuente de respaldo primero */
 }
 
+/* ========================================
+   ESTILOS BASE DEL SISTEMA
+   ======================================== */
 @layer base {
+  /* Variables CSS globales definidas en el elemento raíz */
   :root {
-    /* Tus colores base */
-    --background: #000000;
-    --foreground: #ffffff;
+    --background: #000000;  /* Color de fondo principal: negro puro */
+    --foreground: #ffffff;  /* Color de texto principal: blanco puro */
   }
 
-  /* ❌ Eliminado border-border porque no existe en Tailwind */
-  /* * {
-    @apply border-border;
-  } */
-
+  /* Estilos aplicados al elemento body (toda la página) */
   body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: 'Sohne', sans-serif;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-
-    /* Ligero tracking negativo como usa Sohne */
-    letter-spacing: -0.02em;
+    background: var(--background);                    /* Aplica el color de fondo definido */
+    color: var(--foreground);                        /* Aplica el color de texto definido */
+    font-family: 'Sohne', sans-serif;               /* Fuente principal con respaldo */
+    -webkit-font-smoothing: antialiased;             /* Suavizado de fuente en WebKit (Safari, Chrome) */
+    -moz-osx-font-smoothing: grayscale;             /* Suavizado de fuente en Firefox en macOS */
+    text-rendering: optimizeLegibility;              /* Optimiza la legibilidad del texto */
+    letter-spacing: -0.02em;                        /* Espaciado negativo entre letras (más compacto) */
   }
 }
 
-/* Clase opcional para forzar Sohne */
-.font-sohne {
-  font-family: 'Sohne', sans-serif;
-}
-
-/* Utilidades personalizadas */
+/* ========================================
+   UTILIDADES PERSONALIZADAS
+   ======================================== */
 @layer utilities {
+  /* Clase para forzar el uso de la fuente Sohne */
+  .font-sohne {
+    font-family: 'Sohne', sans-serif;  /* Aplica Sohne con respaldo a sans-serif */
+  }
+  
+  /* Clase para transiciones suaves personalizadas */
   .transition-smooth {
+    /* Transición suave de 0.3 segundos con curva de animación personalizada */
+    /* cubic-bezier(0.4, 0, 0.2, 1) crea una animación que empieza lento, acelera, y termina suave */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
+/* ========================================
+   NOTAS SOBRE EL SISTEMA DE DISEÑO:
+   ========================================
+   
+   1. TEMA OSCURO: 
+      - Fondo negro (#000000) para máximo contraste
+      - Texto blanco (#ffffff) para legibilidad óptima
+   
+   2. TIPOGRAFÍA SOHNE:
+      - Fuente personalizada con múltiples pesos
+      - Espaciado negativo para look moderno
+      - Suavizado optimizado para pantallas
+   
+   3. ANIMACIONES:
+      - Transiciones suaves de 300ms
+      - Curva cubic-bezier para movimiento natural
+      - Aplicadas a hover, focus y cambios de estado
+   
+   4. RESPONSIVE:
+      - Breakpoints: sm (640px+), md (768px+), lg (1024px+)
+      - Mobile-first approach
+      - Escalado tipográfico responsivo
+   ======================================== */

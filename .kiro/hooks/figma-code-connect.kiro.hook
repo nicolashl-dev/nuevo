@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "name": "Conexión de Código con Componente Figma",
+  "description": "Verificar si el componente UI debe conectarse al diseño de Figma",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["**/*.tsx", "**/*.jsx", "**/components/**/*", "**/app/**/*.tsx"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Cuando se crea o actualiza un archivo de componente nuevo, pregunta al usuario si le gustaría confirmar si el código ha sido correctamente vinculado al componente de Figma del mismo nombre. Si el usuario aprueba: primero ejecuta la herramienta get code connect map para la última URL de Figma proporcionada por el usuario. Puedes pedirle que la proporcione nuevamente si no está disponible. Si la respuesta está vacía, ejecuta la herramienta add code connect map, de lo contrario dile al usuario que ya tiene código mapeado a ese componente. Si el usuario rechaza: No ejecutes herramientas adicionales."
+  },
+  "shortName": "figma-code-connect"
+}

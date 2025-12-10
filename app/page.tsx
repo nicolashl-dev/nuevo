@@ -1,29 +1,25 @@
-"use client";
+// Importamos los componentes que vamos a usar en esta página
+import Navigation from "@/components/Navigation";     // Componente de navegación
+import PhotographerHero from "@/components/PhotographerHero"; // Componente hero principal
 
-import { useState, useEffect } from "react";
-
+// Componente principal de la página de inicio
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const frame = requestAnimationFrame(() => setIsLoaded(true));
-    return () => cancelAnimationFrame(frame);
-  }, []);
-
   return (
-    <main className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Hero Section Center */}
-      <section className="flex items-center justify-center min-h-screen px-6">
-        <div
-          className={`text-center transition-all duration-1000 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          <h1 className="font-light tracking-[-0.015em] leading-[1.37] text-[47px] sm:text-[44px] md:text-[52px]">
-            The Regeneration Suite
-          </h1>
-        </div>
-      </section>
+    // Contenedor principal de la página con posicionamiento relativo
+    <main className="relative">
+      
+      {/* COMPONENTE DE NAVEGACIÓN */}
+      {/* Se renderiza primero para que aparezca encima de todo el contenido */}
+      <Navigation />
+      
+      {/* COMPONENTE HERO PRINCIPAL */}
+      {/* Pasamos props personalizadas para nuestro proyecto */}
+      <PhotographerHero 
+        name="The Regeneration Suite"           // Nombre del proyecto/empresa
+        title="Visual Innovation Studio"        // Subtítulo que describe el tipo de negocio
+        description="Transformando ideas en experiencias visuales extraordinarias a través de la creatividad y la tecnología." // Descripción del servicio
+      />
+      
     </main>
   );
 }
