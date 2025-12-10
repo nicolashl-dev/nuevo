@@ -34,7 +34,6 @@
     -webkit-font-smoothing: antialiased;             /* Suavizado de fuente en WebKit (Safari, Chrome) */
     -moz-osx-font-smoothing: grayscale;             /* Suavizado de fuente en Firefox en macOS */
     text-rendering: optimizeLegibility;              /* Optimiza la legibilidad del texto */
-    letter-spacing: -0.02em;                        /* Espaciado negativo entre letras (más compacto) */
   }
 }
 
